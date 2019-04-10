@@ -1,0 +1,13 @@
+﻿<Window x:Class="TimeRecorder.TimesheetView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TimeRecorder"
+        mc:Ignorable="d"
+        Title="Current Timesheet" Height="562.03" Width="890.038" ResizeMode="CanMinimize" Foreground="{x:Null}" Background="#FF542A6C">
+
+    <DataGrid x:Name="datagridTimeEntries" BeginningEdit="DatagridTimeEntries_BeginningEdit" HorizontalAlignment="Left" Height="530" Margin="10,0,0,0" VerticalAlignment="Top" Width="865"/>
+
+
+</Window>
