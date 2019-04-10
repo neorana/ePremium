@@ -2,7 +2,6 @@
 using System;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Threading;
 using System.Timers;
 using System.Windows;
@@ -17,7 +16,7 @@ namespace TimeRecorder
     /// </summary>
     public partial class MainWindow : Window
     {
-        const string CaptionLogOut = "Log Out";
+        const string CaptionLogOut = "Log Out"; //test for push in githubs
         const string CaptionLogIn = "Log In";
 
         public bool IsExitFromSystemTray = false;
@@ -27,13 +26,13 @@ namespace TimeRecorder
 
         System.Windows.Forms.NotifyIcon MyNotifyIcon = new System.Windows.Forms.NotifyIcon();
         System.Windows.Forms.MenuItem SystemTrayMenu = new System.Windows.Forms.MenuItem();
-      
+
         Mutex m;
 
 
         public MainWindow()
         {
-          
+
             bool isnew;
             m = new Mutex(true, "TimeRecorderApp", out isnew);
             if (!isnew)
@@ -53,7 +52,7 @@ namespace TimeRecorder
 
             //For system tray
             MyNotifyIcon = new System.Windows.Forms.NotifyIcon();
-            
+
 
             Stream iconStream = Application.GetResourceStream(new Uri("pack://application:,,,/TimeRecorder;component/Resources/epremium.ico")).Stream;
             MyNotifyIcon.Icon = new System.Drawing.Icon(iconStream);
@@ -263,9 +262,9 @@ namespace TimeRecorder
                 var uploadresult = Common.UploadTimesheet();
                 if (uploadresult)
                 {
-                    
-MessageBox.Show($"Timesheet for {Common.GetTimesheetCoverage()} successfully uploaded");
-System.Diagnostics.Process.Start("http://epremium.internal.towerswatson.com");
+
+                    MessageBox.Show($"Timesheet for {Common.GetTimesheetCoverage()} successfully uploaded");
+                    System.Diagnostics.Process.Start("http://epremium.internal.towerswatson.com");
                 }
             }
         }
